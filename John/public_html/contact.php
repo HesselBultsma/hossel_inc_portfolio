@@ -50,7 +50,7 @@
                     </table>
                 </div>
                 <div class="col-md-6">
-                    <img src="http://placehold.it/200x200" alt="Stenden" class="img-responsive">
+                    <img src="http://placehold.it/300x300" alt="Stenden" class="img-responsive">
                 </div>
             </div>
         </div>
