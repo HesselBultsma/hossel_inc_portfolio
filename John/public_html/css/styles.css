@@ -1,1 +1,21 @@
-body    {overflow-y:scroll;}
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body    {
+  overflow-y:scroll;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}

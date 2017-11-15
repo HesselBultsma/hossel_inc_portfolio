@@ -7,19 +7,17 @@
     <meta name="author" content="">
 
     <title>One Page Wonder - Start Bootstrap Template</title>
-
+    
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-     <link href="./css/animate.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+     <link href="../css/animate.css" rel="stylesheet">
      
      
-     <script src="./js/custom.js"></script>
+     <script src="../js/custom.js"></script>
       
-
-
    
     <!-- Custom styles for this template -->
-    <link href="./css/one-page-wonder.css" rel="stylesheet">
-    <link href="./css/styles.css" rel="stylesheet">
+    <link href="../css/one-page-wonder.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
 
 </head>
