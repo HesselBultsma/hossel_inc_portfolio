@@ -34,35 +34,53 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                           
+		<?php
+		
+		$HTML = 7;
+		$CSS = 9;
+		$Javascript = 8;
+		$PHP = 6;
+		$Rails = 9;
+		$Jquery = 8;
+		$Gemiddelde = ($HTML + $CSS + $Javascript + $PHP + $Rails + $Jquery) / 6;
+		$afgerond = round($Gemiddelde);
+			echo " <tr>
                                 <td>HTML</td>
-                                <td>7</td>
+                                <td>$HTML</td>
 
                             </tr>
                             <tr>
                                 <td>CSS</td>
-                                <td>9</td>
+                                <td>$CSS</td>
 
                             </tr>
                             <tr>
                                 <td>Javascript</td>
-                                <td>8</td>
+                                <td>$Javascript</td>
 
                             </tr>
                             <tr>
                                 <td>PHP</td>
-                                <td>6</td>
+                                <td>$PHP</td>
 
                             </tr>
                             <tr>
                                 <td>Rails</td>
-                                <td>9</td>
+                                <td>$Rails</td>
 
                             </tr>
                             <tr>
                                 <td>Jquery</td>
-                                <td>8</td>
+                                <td>$Jquery</td>
 
+                            </tr>
+			     <tr>
+                                <td>Gemiddelde</td>
+                                <td><b> $afgerond </b></td>
+
+                            </tr>"
+			    ?>
                             </tr>
                         </tbody>
                     </table>
