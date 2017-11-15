@@ -44,7 +44,7 @@
 		$Rails = 9;
 		$Jquery = 8;
 		$Gemiddelde = ($HTML + $CSS + $Javascript + $PHP + $Rails + $Jquery) / 6;
-		$afgerond = round($Gemiddelde);
+		$afgerond = round($Gemiddelde, 1);
 			echo " <tr>
                                 <td>HTML</td>
                                 <td>$HTML</td>
