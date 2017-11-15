@@ -7,14 +7,14 @@
 
 <?php include 'include/menu.php';?>
 
- <header class="masthead">
+ <header class="masthead pt-3">
       <div class="overlay" style="padding: 0px; color:#fff;">
        <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 order-2">
             <div class="p-5">
               <img class="img-fluid
- " style="border-radius:45px;" src="https://unsplash.it/500/500?image=836" alt="">
+ " style="border-radius:45px;" src="img/profile.jpg" alt="">
             </div>
           </div>
           <div class="col-md-6 order-1">
