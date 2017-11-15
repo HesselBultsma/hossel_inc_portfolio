@@ -8,19 +8,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
+            <li class="nav-item ">
+              <a class="nav-link" href="index.php">Home
+               
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Over mij</a>
+              <a class="nav-link" href="about.php">Over mij</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Projecten</a>
+              <a class="nav-link" href="projects.php">Projecten</a>
             </li>
              <li class="nav-item">
-              <a class="nav-link" href="#">Skills</a>
+              <a class="nav-link" href="cijfers.php">Cijfers</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
