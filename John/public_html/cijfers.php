@@ -76,7 +76,7 @@
 
                             </tr>
 			     <tr>
-                                <td>Gemiddelde</td>
+                                <td><b>Gemiddelde</b></td>
                                 <td><b> $afgerond </b></td>
 
                             </tr>"
