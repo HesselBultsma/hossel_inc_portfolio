@@ -15,7 +15,7 @@
 
             <div class="row ">
                 <div class="col-12 text-center">
-                    <h1>Contact
+                    <h1>Contact</h1>
                 </div>
 
 
@@ -30,16 +30,11 @@
         include 'database.class.php';
 	
 	  $database = new Database();
-        $database->query('SELECT * FROM contact LEFT JOIN user ON contact_id = user.user_id');
+        $database->query('SELECT * FROM user');
         $database->execute();
         $results = $database->resultset();
-	
-	print_r($results);
 	        foreach($results as $row){
 
-	echo "TEST: " .$row['email'];
-	echo $row['telefoon'];
-	echo $row['studentnummer'];
         ?>
 
               
@@ -58,7 +53,7 @@
                             </tr>
                             <tr>
                                 <td><b>Tel nr</b></td>
-                                <td><?php echo $row['telefoon'];?></td>
+                                <td><?php echo $row['phonenumer'];?></td>
 
                             </tr>
                             <tr>
