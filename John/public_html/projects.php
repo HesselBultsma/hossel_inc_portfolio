@@ -60,7 +60,7 @@
               <h4 class='card-title'>
                 <a href='#'>{$row['title']}</a>
               </h4>
-             
+             <p class='short-description'>{$row['short_description']}</p>
             </div>
           </div>
         </div> ";
