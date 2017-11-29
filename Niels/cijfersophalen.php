@@ -24,6 +24,7 @@ tr:nth-child(even) {
         <tr>
             <th>Cijfer id</th>
             <th>Vak</th>
+            <th>Cijfer vak</th>
             <th>Student id</th>
             <th>Student naam</th>
         </tr>
@@ -39,6 +40,7 @@ tr:nth-child(even) {
             echo "<tr>";
             echo "<td>" . $row['cijfers_id'] . "</td>";
             echo "<td>" . $row['cijfer_vak'] . "</td>";
+            echo "<td>" . $row['cijfer'] . "</td>";
             echo "<td>" . $row['student_id'] . "</td>";
             echo "<td>" . $row['firstname'] .  " " . $row["lastname"] . "</td>";
             echo "</tr>";
