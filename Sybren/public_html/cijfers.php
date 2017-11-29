@@ -1,97 +1,53 @@
 <!DOCTYPE html>
-<?php include 'include/styles.php';?>
-<?php //include 'include/menu.php';?>
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
-<body cz-shortcut-listen="true">
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
 
-    <?php include 'include/menu.php';?>
+<table>
+        <tr>
+            <th>Cijfer id</th>
+            <th>Resultaat</th>
+            <th>Vak</th>
+            <th>Student id</th>
+            <th>Student naam</th>
+        </tr>
+        <?php
 
+        define("DB_PATH", "portfolio.db");
+        include 'database.class.php';
 
-
-
-    <section>
-        <div class="container pt-5 pb-4">
-
-            <div class="row ">
-                <div class="col-12 text-center">
-                    <h1>Cijfers
-                </div>
-
-
-
-            </div>
-        </div>
-
-        <div class="container  pb-5">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Vak</th>
-                                <th>Cijfer</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                           
-		<?php
-		
-		$HTML = 7;
-		$CSS = 9;
-		$Javascript = 8;
-		$PHP = 6;
-		$Rails = 9;
-		$Jquery = 8;
-		$Gemiddelde = ($HTML + $CSS + $Javascript + $PHP + $Rails + $Jquery) / 6;
-		$afgerond = round($Gemiddelde, 1);
-			echo " <tr>
-                                <td>HTML</td>
-                                <td>$HTML</td>
-
-                            </tr>
-                            <tr>
-                                <td>CSS</td>
-                                <td>$CSS</td>
-
-                            </tr>
-                            <tr>
-                                <td>Javascript</td>
-                                <td>$Javascript</td>
-
-                            </tr>
-                            <tr>
-                                <td>PHP</td>
-                                <td>$PHP</td>
-
-                            </tr>
-                            <tr>
-                                <td>Rails</td>
-                                <td>$Rails</td>
-
-                            </tr>
-                            <tr>
-                                <td>Jquery</td>
-                                <td>$Jquery</td>
-
-                            </tr>
-			     <tr>
-                                <td><b>Gemiddelde</b></td>
-                                <td><b> $afgerond </b></td>
-
-                            </tr>"
-			    ?>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
+        $database = new Database();
+        $database->query('SELECT * FROM cijfers LEFT JOIN user ON cijfers.student_id = user.user_id');
+        $database->execute();
+        $results = $database->resultset();
 
 
-
-
-    <?php include 'include/footer.php';?>
-
-    <?php include 'include/scripts.php';?>
+        foreach($results as $row){
+            echo "<tr>";
+            echo "<td>" . $row['cijfers_id'] . "</td>";
+            echo "<td>" . $row['cijfer'] . "</td>";
+            echo "<td>" . $row['cijfer_vak'] . "</td>";
+            echo "<td>" . $row['student_id'] . "</td>";
+            echo "<td>" . $row['firstname'] .  " " . $row["lastname"] . "</td>";
+            echo "</tr>";
+        }
+        ?>
+</table>
+</html>

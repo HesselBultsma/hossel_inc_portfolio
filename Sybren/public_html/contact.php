@@ -23,37 +23,25 @@
             </div>
         </div>
 
-<?php  include 'include/test.php';?>
     <?php 
-    if(isset($_POST['submit'])){
-$Postmail = ($_POST['Email']);
-$Posttel = ($_POST['Tel']);
-$Poststudent = ($_POST['Student']);
-$email = "Test@live.com";
-$tel = "06-1234567890";
-$student = "128696";
 
 
-$str_email = str_replace("Test@live.com", $Postmail, $email);
-$email = $str_email;
-$str_tel = str_replace("06-1234567890", $Posttel, $tel);
-$tel = $str_tel;
-$str_student = str_replace("128696", $Poststudent, $student);
-$student = $str_student;
-}
+   define("DB_PATH", "portfolio.db");
+        include 'database.class.php';
+	
+	  $database = new Database();
+        $database->query('SELECT * FROM contact LEFT JOIN user ON contact_id = user.user_id');
+        $database->execute();
+        $results = $database->resultset();
+	
+	print_r($results);
+	        foreach($results as $row){
 
-if(empty($email)) {
-$email = "";
-}
-if(empty($tel)) {
-$tel = "";
-}
-if(empty($student)) {
-$student = "";
-}
+	echo "TEST: " .$row['email'];
+	echo $row['telefoon'];
+	echo $row['studentnummer'];
+        ?>
 
-
-?>
               
               
                <div class="container  pb-4">
@@ -65,18 +53,18 @@ $student = "";
                         <thead>
                         <tr>
                                 <td><b>Email</b></td>
-                                <td><?php echo $email?></td>
+                                <td><?php echo $row['email'];?></td>
 
                             </tr>
                             <tr>
                                 <td><b>Tel nr</b></td>
-                                <td><?php echo $tel?></td>
+                                <td><?php echo $row['telefoon'];?></td>
 
                             </tr>
                             <tr>
                                 <td><b>Student nr</b></td>
-                                <td><?php  echo $student?></td>
-
+                                <td><?php  echo $row['studentnummer'];?></td>
+<?php } ?>
                             </tr>
                            
                         </tbody>
