@@ -19,9 +19,7 @@
             <li class="nav-item">
               <a class="nav-link" href="projects.php">Projecten</a>
             </li>
-             <li class="nav-item">
-              <a class="nav-link" href="cijfers.php">Cijfers</a>
-            </li>
+             
             <li class="nav-item">
               <a class="nav-link" href="contact.php">Contact</a>
             </li>

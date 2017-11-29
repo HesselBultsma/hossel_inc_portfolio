@@ -18,12 +18,18 @@
         $database->execute();
         $results = $database->resultset();
 
-    
+    echo"<div class='container pt-5 ' >
+
+              <div class='row pb-4' >
+                  <div class='col-12 text-center' >
+                      <h1 >Over mij</h1>    
+                  </div>
+            </div>";
 
 
         foreach($results as $row){
             
-            echo "<div class='container mt-5 mb-5'>";
+            echo "<div class='container  mb-5'>";
             echo "<div class='row'>";
             
         echo " <div class='col-lg-6'>
