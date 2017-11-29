@@ -8,44 +8,55 @@
     <?php include 'include/menu.php';?>
 
 
+    <?php
+
+        define("DB_PATH", "portfolio.db");
+        include 'database.class.php';
+
+        $database = new Database();
+        $database->query('SELECT * FROM Over_mij LEFT JOIN user ON About_id = user.user_id');
+        $database->execute();
+        $results = $database->resultset();
+
+    
 
 
-    <section>
-        <div class="container pt-5 pb-5" >
-
-              <div class="row pb-4" >
-                  <div class="col-12 text-center" >
-                      <h1 >Over mij</h1>    
-                  </div>
-            </div>
-
-            <div class="row pb-4">
-                <div class="col-lg-6">
+        foreach($results as $row){
+            
+            echo "<div class='container mt-5 mb-5'>";
+            echo "<div class='row'>";
+            
+        echo " <div class='col-lg-6'>
                     <h3>Wie ben ik</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                </div>
-                <div class="col-lg-6 ">
+                    <p> {$row['Wie']}  </p>
+                </div>";
+          echo " <div class='col-lg-6'>
                     <h3>Opleiding</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-lg-6 ">
+                    <p> {$row['Opleiding']} </p>
+                </div>";
+                  echo " <div class='col-lg-6'>
                     <h3>Ervaring</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                </div>
-                <div class="col-lg-6 ">
-                    <img src="img/logo_print.png" alt="Stenden" class="img-responsive">
-                </div>
+                    <p>{$row['Ervaring']} </p>
+                </div>";
+                
+                  echo" <div class='col-lg-6'>
+                  <h3></h3>
+                        <img src='img/logo_print.png' alt='Stenden' class='img-responsive'>
+                    </div> ";
+            
+            echo "</div>";
+            echo "</div>";
+           
+        }
+        ?>
+ 
 
-            </div>
+ 
 
-        </div>
-    </section>
-
+                
 
 
-    <?php include 'include/footer.php';?>
 
-    <?php include 'include/scripts.php';?>
+        <?php include 'include/footer.php';?>
+
+        <?php include 'include/scripts.php';?>
