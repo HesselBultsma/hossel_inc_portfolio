@@ -1,0 +1,94 @@
+/*!
+ * Start Bootstrap - One Page Wonder (https://startbootstrap.com/template-overviews/one-page-wonder)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-one-page-wonder/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+header.masthead {
+  background: url('https://unsplash.it/1900/1080?image=304') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+header.masthead>.overlay {
+  padding: 5rem 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 992px) {
+  header.masthead>.overlay {
+    padding: 10rem 0;
+  }
+}
+
+.skill5
+{   padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.skill5 .counter-count 
+{    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+    font-size: 40px;
+    background-color: #3d3d3d;
+    border-radius: 50%;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    line-height: 172px;
+    width: 192px;
+    height: 192px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: inline-block;
+   
+}
+
+.skill5 .counter-count .counter-percent
+{	
+	font-size: 40px;
+    color: #ffffff;
+    margin-left: 1px;
+   
+    
+}
+
+.skill5 .counter-bottom
+{
+    font-size: 24px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 34px;
+}
+
+.card-title a {
+    color: #3d3d3d;
+}
+
+.portfolio-item{
+    margin-bottom: 30px;
+}
+
+.skill5-counter:hover {
+    -webkit-animation: pulse 1s;
+    animation: pulse 1s;
+}
+

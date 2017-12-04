@@ -23,24 +23,27 @@ tr:nth-child(even) {
 <table>
         <tr>
             <th>Cijfer id</th>
+            <th>Resultaat</th>
             <th>Vak</th>
-            <th>Cijfer vak</th>
             <th>Student id</th>
             <th>Student naam</th>
         </tr>
         <?php
 
+        define("DB_PATH", "portfolio.db");
+        include 'database.class.php';
 
-        $db = new PDO('sqlite:portfolio.db');
-        //connection code here
-        $result = $db->query("SELECT * FROM cijfers "
-                . "LEFT JOIN user ON cijfers.student_id = user.user_id"); // Doe een WHERE om later een specifieke leerling te kiezen.
+        $database = new Database();
+        $database->query('SELECT * FROM cijfers LEFT JOIN user ON cijfers.student_id = user.user_id');
+        $database->execute();
+        $results = $database->resultset();
 
-        foreach($result as $row){
+
+        foreach($results as $row){
             echo "<tr>";
             echo "<td>" . $row['cijfers_id'] . "</td>";
-            echo "<td>" . $row['cijfer_vak'] . "</td>";
             echo "<td>" . $row['cijfer'] . "</td>";
+            echo "<td>" . $row['cijfer_vak'] . "</td>";
             echo "<td>" . $row['student_id'] . "</td>";
             echo "<td>" . $row['firstname'] .  " " . $row["lastname"] . "</td>";
             echo "</tr>";

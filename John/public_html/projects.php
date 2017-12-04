@@ -10,8 +10,8 @@
 
 
 
-    <section>
-        <div class="container pt-5 pb-4" >
+
+        <div class="container pt-5 " >
 
               <div class="row pb-4" >
                   <div class="col-12 text-center" >
@@ -31,83 +31,56 @@
            
 
         </div>
-    </section>
+   
     
-    <section class="pb-5" >
-    <div class="container">
+    
+    
+     <?php
+
+        define("DB_PATH", "portfolio.db");
+        include 'database.class.php';
+
+        $database = new Database();
+        $database->query('SELECT * FROM project LEFT JOIN user ON project_id = user.user_id');
+        $database->execute();
+        $results = $database->resultset();
+
+    
+         echo "<div class='container mt-4 mb-5'>";
+            echo "<div class='row'>";
+
+        foreach($results as $row){
+            
+   
+            
+        echo "     <div class='col-lg-6 portfolio-item '>
+          <div class='card h-100 wow slideInUp  ' >
+            <a href='#'><img class='card-img-top' src='http://placehold.it/700x400' alt=''></a>
+            <div class='card-body'>
+              <h4 class='card-title'>
+                <a href='#'>{$row['title']}</a>
+              </h4>
+             <p class='short-description'>{$row['short_description']}</p>
+            </div>
+          </div>
+        </div> ";
+        
+         
+            
+          
+           
+        }
+    
+      echo "</div>";
+            echo "</div>";
+        ?>
+    
+    
+    
+   
 
    
-      <div class="row">
-        <div class="col-lg-6 portfolio-item ">
-          <div class="card h-100 wow slideInUp  " >
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project One</a>
-              </h4>
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 portfolio-item">
-          <div class="card h-100 wow slideInUp ">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Two</a>
-              </h4>
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 portfolio-item">
-          <div class="card h-100 wow slideInUp">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Three</a>
-              </h4>
-              
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 portfolio-item">
-          <div class="card h-100  wow slideInUp">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Four</a>
-              </h4>
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 portfolio-item ">
-          <div class="card h-100  wow slideInUp">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Five</a>
-              </h4>
-             
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 portfolio-item">
-          <div class="card h-100  wow slideInUp">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project Six</a>
-              </h4>
-            
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.row -->
-    </div>
-      </section>
+    
     
    
 
