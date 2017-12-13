@@ -12,6 +12,7 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
      <link href="./css/animate.css" rel="stylesheet">
      
+  <link rel="shortcut icon" href="img/favicon.ico" />
      
      <script src="./js/custom.js"></script>
       
