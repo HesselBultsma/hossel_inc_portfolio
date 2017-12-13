@@ -82,18 +82,36 @@ if(isset($_POST["submit"])) {
 	//hash the password for safety
 	$passwordhash = password_hash($password, PASSWORD_BCRYPT);
 
-	$query = "INSERT INTO user (firstname, lastname, address, street, postcode, city, phonenumer, email, street, password, studentnummer) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+	$query = "INSERT INTO user (firstname, lastname, address, street, postcode, city, phonenumer, email, password, studentnummer, roll) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	$insert = $database->prepare($query);
 
 	//insert all in database
-	$data = array($firstname, $lastname, $address, $street,$postalcode, $town, $phone, $email, $user, $passwordhash, "1");
+//	$data = array($firstname, $lastname, $address, $street,$postalcode, $town, $phone, $email, $passwordhash, $studentnumber, "0");
+
+	try {
+		$testRowsQuery = "SELECT COUNT(*) FROM user";
+		$testRows = $database->query($testRowsQuery);
+		foreach ($testRows as $test) {
+			if ($test[0] == 0) {
+                $data = array($firstname, $lastname, $address, $street,$postalcode, $town, $phone, $email, $passwordhash, $studentnumber, "1");
+
+			} else {
+				$data = array($firstname, $lastname, $address, $street,$postalcode, $town, $phone, $email, $passwordhash, $studentnumber, "0");
+
+			}
+		}
+	} catch (PDOException $e) {
+		echo $e->getMessage();
+	}
+
 	try {
 		$insert->execute($data);
 		$database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		echo "<p style='color: green; text-align: center;'>User added</p>";
+		echo "<p style='color: green; text-align: center;'>Gebruiker toegevoegd</p>";
 	} catch (PDOException $e) {
 		echo $e->getMessage();
-		echo "<p style='color: red; text-align: center;'>User NOT added!!</p>";
+		echo "<p style='color: red; text-align: center;'>Gebruiker niet toegevoegd!</p>";
 	}
 }
 ?>
